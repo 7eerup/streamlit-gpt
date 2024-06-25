@@ -3,8 +3,9 @@ import openai
 import time
 import os
 
-# API key set up
+# API key 설정
 openai.api_key = os.environ["OPENAI_API_KEY"]
+
 
 def chat_gpt(question):
     response = openai.ChatCompletion.create(
@@ -19,22 +20,26 @@ def chat_gpt(question):
     )
     return response.choices[0].message['content'].strip()
 
+
 # ------------ 메인(Main) 화면 구성 ------------
-image_url = "https://cdn.pixabay.com/photo/2024/03/12/09/28/ai-generated-8628373_1280.png" 
-st.image(image_url, width=300)
-# st.title(':wave:')
+image_url = "https://cdn.pixabay.com/photo/2024/03/12/09/28/ai-generated-8628373_1280.png"
+st.image(image_url, width=350)
 
-with st.spinner('RUNNING...'):
-      time.sleep(7)
 
-# 텍스트 입력 받기
-st.sidebar.header('Hello StreamlitGPT :rocket:')
+
+
+# ------------ 사이드바(Side bar) 화면 구성 ------------
+st.sidebar.title('Anyounghaseyo(안녕하세요) :bow:')
+st.sidebar.header('Hello :wave:')
+st.sidebar.header('streamlitGPT :rocket:')
 search_query = st.sidebar.text_input('🔍 검색어를 입력해 주세요')
 
 if st.sidebar.button("🔍 검색"):
     if search_query:
-        result = chat_gpt(search_query)
+        with st.spinner('RUNNING...⏳'):      # 1. 로딩 상태 구현
+            result = chat_gpt(search_query)
         st.write(result)
-        st.success("답변이 마음에 드세요?")
+        st.success("streamlitGPT 이용해 주셔서 감사합니다🙏")
+        st.balloons()   # 2. 검색 완료 알림 - 풍선 효과
     else:
         st.error("검색어를 입력해 주세요")
