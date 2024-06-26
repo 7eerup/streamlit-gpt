@@ -30,8 +30,9 @@ st.image(image_url, width=350)
 # ------------ 사이드바(Side bar) 화면 구성 ------------
 st.sidebar.caption(':house: Home')
 st.sidebar.title('Anyounghaseyo(안녕하세요) :bow:')
-# st.sidebar.header('Hello :wave:')
 st.sidebar.header('Hello:wave: streamlitGPT🧑‍💻')
+
+# 검색어 입력
 search_query = st.sidebar.text_input('🔍 검색어를 입력해 주세요')
 
 
