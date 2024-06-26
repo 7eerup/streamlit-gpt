@@ -14,9 +14,9 @@ def chat_gpt(question):
             {"role": "system", "content": "You are a helpful assistant."},
             {"role": "user", "content": question},
         ],
-        max_tokens=500, # 텍스트 제한
-        n=1,            # 응답 수 
-        temperature=0.7,
+        max_tokens=500,     # 텍스트 제한
+        n=1,                # 응답 수 
+        temperature=0.7,    # 창의력
     )
     return response.choices[0].message['content'].strip()
 
@@ -27,12 +27,13 @@ st.image(image_url, width=350)
 
 
 
-
 # ------------ 사이드바(Side bar) 화면 구성 ------------
+st.sidebar.caption(':house: Home')
 st.sidebar.title('Anyounghaseyo(안녕하세요) :bow:')
-st.sidebar.header('Hello :wave:')
-st.sidebar.header('streamlitGPT :rocket:')
+# st.sidebar.header('Hello :wave:')
+st.sidebar.header('Hello:wave: streamlitGPT🧑‍💻')
 search_query = st.sidebar.text_input('🔍 검색어를 입력해 주세요')
+
 
 if st.sidebar.button("🔍 검색"):
     if search_query:
@@ -43,3 +44,6 @@ if st.sidebar.button("🔍 검색"):
         st.balloons()   # 2. 검색 완료 알림 - 풍선 효과
     else:
         st.error("검색어를 입력해 주세요")
+
+
+st.sidebar.caption(':copyright: 2024 streamlitGPT')
