@@ -41,7 +41,7 @@ if st.sidebar.button("🔍 검색"):
             result = chat_gpt(search_query)
         st.write(result)
         st.success("streamlitGPT 이용해 주셔서 감사합니다🙏")
-        st.balloons()   # 2. 검색 완료 알림 - 풍선 효과
+        # st.balloons()   # 2. 검색 완료 알림 - 풍선 효과
     else:
         st.error("검색어를 입력해 주세요")
 
