@@ -1,7 +1,7 @@
 ## Python Streamlit 패키지를 활용한 ChatGPT 만들기
 
 <p align="center">
-<img alt="img" src="./src/screenshot.png" width="100" />
+<img alt="img" src="./src/screenshot.png" width="700" />
 <p>
 
 <p align="center">Made with Streamlit</p>
